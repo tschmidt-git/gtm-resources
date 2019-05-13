@@ -1,6 +1,6 @@
 <script>
  
-var cookieName  = "basketValue"; // same name like the url parameter with the true/false value
+var cookieName  = "basketValue"; // unique name of cookie. make sure there are no cookies of the same name!
 var cookieValue = "{{custom.basketValue}}";
 
 var cookiePath  = "/";
@@ -15,7 +15,7 @@ date.setTime(dateTimeNow + expirationTime);             //Set expiration time (T
 
 var expirationTime = date.toUTCString();                //Convert milliseconds to UTC time string
 
-document.cookie = cookieName+"="+cookieValue+"; expires="+expirationTime+"; path="+cookiePath+"; domain="+{{url.hostname.stripwww}}; //Set cookie utmSourceMedium
+document.cookie = cookieName+"="+cookieValue+"; expires="+expirationTime+"; path="+cookiePath+"; domain="+{{url.hostname.stripwww}}; //Set cookie utmSourceMedium - make sure to replace "url.hostname.stripwww" with top-level domain
 
 
 </script>
