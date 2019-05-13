@@ -1,12 +1,12 @@
 <!-- Insert on conversion action, form submit, success/thank you page, etc.-->
 <script>
-window.dataLayer = window.dataLayer || [];
+window.dataLayer = window.dataLayer || []; // uses existing datalayer that was set before gtm.js, otherwise will overwrite via below .push
 window.dataLayer.push({
- "questionnaire": {
-    "step": {
-      "question": "Contactform" 
+ "questionnaire": {		// replace with 1st level category ("datalayer.questionnaire.")
+    "step": {			// replace with 2nd level category ("datalayer.questionnaire.step")
+      "question": "Contactform" // replace with 3rd level category ("datalayer.questionnaire.step.question") and name of conversion event
     },
 	},
-	"event": "questionnaireEvent"
+	"event": "questionnaireEvent"	// replace with desired event name
 });
 </script>
