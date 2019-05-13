@@ -1,0 +1,11 @@
+<!-- simple script for checking if either of two values in a datalayer variable match, returning 200 if true, otherwise 100 -->
+<script>
+function(){
+  if ({{dataLayer.questionnaire.step.answer}} = "Excellent (720-850)" || "Good (680-719)"){
+  		var basketValue = 200;
+  	} else{
+		var basketValue = 100;
+	}; 
+	return basketValue;
+}
+</script>
