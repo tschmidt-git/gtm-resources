@@ -1,0 +1,12 @@
+// insert on conversion action, form submit, success/thank you page, etc.
+<script>
+window.dataLayer = window.dataLayer || [];
+window.dataLayer.push({
+ "questionnaire": {
+    "step": {
+      "question": "Contactform" // <- replace with desired conversion name
+    },
+	},
+	"event": "questionnaireEvent"
+});
+</script>
