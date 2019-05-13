@@ -1,0 +1,21 @@
+<script>
+ 
+var cookieName  = "basketValue"; // same name like the url parameter with the true/false value
+var cookieValue = "{{custom.basketValue}}";
+
+var cookiePath  = "/";
+
+var expirationTime = 2592000;                           //30 min expiration time in seconds
+expirationTime = expirationTime * 1000;                 //Convert expirationtime to milliseconds
+ 
+var date = new Date();                                  //Create javascript date object
+var dateTimeNow = date.getTime();                       //Get current time in milliseconds since 1 january 1970 (Unix time)
+
+date.setTime(dateTimeNow + expirationTime);             //Set expiration time (Time now + one month)
+
+var expirationTime = date.toUTCString();                //Convert milliseconds to UTC time string
+
+document.cookie = cookieName+"="+cookieValue+"; expires="+expirationTime+"; path="+cookiePath+"; domain="+{{url.hostname.stripwww}}; //Set cookie utmSourceMedium
+
+
+</script>
