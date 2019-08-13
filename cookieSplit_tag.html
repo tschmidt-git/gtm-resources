@@ -1,0 +1,21 @@
+<script> 
+function testVariant () { 
+return variantTwo; 
+} 
+variantOne = "A", // Variation 1 name 
+variantTwo = "B", // Variation 2 name 
+variant = variantOne, 
+randomNumSample = 1073741824; 
+
+if (! {{cookie.50-50 Split Cookie}}) {// If cookie is not set run code 
+if ({{Random Number}} <randomNumSample) { 
+variant = testVariant (); // For 50% or hits, fire Variation 2 
+} 
+var d = new Date (); // Create cookie 
+d.setTime (d.getTime () + 1000 * 60 * 60 * 24 * 730); 
+var expires = "expires =" + d.toGMTString (); 
+document.cookie = "splitVar =" + variant + ";" + expires + "; path = /";
+} else if ({{cookie.50-50 Split Cookie}} == variantTwo) {// If user has only seen Variation 2 
+variant = testVariant (); 
+} 
+</script>
