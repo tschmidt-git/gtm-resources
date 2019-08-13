@@ -1,5 +1,7 @@
+<!–– 1. create 1st-party cookie in GTM and name it `splitVar` and give it the label "cookie.50-50 Split Cookie"  ––>
+<!–– 2. create custom HTML tag and paste below code  ––>
+
 <script>
- 
 var cookieName  = "basketValue"; // unique name of cookie. make sure there are no cookies of the same name!
 var cookieValue = "{{custom.basketValue}}"; // use a dataLayer (or other) variable to populate with dynamic value
 
@@ -16,6 +18,4 @@ date.setTime(dateTimeNow + expirationTime);             //Set expiration time (T
 var expirationTime = date.toUTCString();                //Convert milliseconds to UTC time string
 
 document.cookie = cookieName+"="+cookieValue+"; expires="+expirationTime+"; path="+cookiePath+"; domain="+{{url.hostname.stripwww}}; //Set cookie utmSourceMedium - make sure to replace "url.hostname.stripwww" with top-level domain
-
-
 </script>
